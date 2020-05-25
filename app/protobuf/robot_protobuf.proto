@@ -1,0 +1,89 @@
+syntax = "proto3";
+package protobuf;
+service RobotServer{
+    //查询终端是否在线
+//   rpc UsersOnline(UsersOnlineReq)returns(Rsponses){
+//   }
+//    //发送消息
+//    rpc SendMsg(SendMsgReq)returns(Rsponses) {
+//    }
+//    //发送视频邀请
+//    rpc StartCall(StartCallReq)returns(Rsponses){
+//     }
+//    //首页----去充电|去接待点|去指定地点|去巡逻|结束巡逻
+//    rpc ToAction(ToActionReq)returns(Rsponses){
+//    }
+//    //获取当前任务|机器人电量|当前位置|是否在线
+//    rpc GetIndexInfo(GetIndexInfoReq)returns(Rsponses){
+//    }
+    rpc UploadLocation(UploadLocationReq)returns(Rsponses){}
+    //上报机器人状态
+    rpc UploadStatus(UploadReq)returns(Rsponses){
+    }
+
+}
+
+//查询用户是否在线
+//message UsersOnlineReq{
+//   string clientId = 1;
+//}
+message Rsponses{
+    int64 code = 1;
+    string msg = 2;
+    int64 msgId = 3;
+}
+
+////发送文本消息
+//message SendMsgReq{
+// string action = 1;
+// string content = 2;
+// string toClientId = 3;
+//}
+//
+////发送视频邀请
+//message StartCallReq{
+//  string clientId = 1;
+//  string toClientId=2;
+//  string roomId =3;
+//  string action = 4;
+//}
+//
+//
+//
+////首页----去充电|去接待点|去指定地点|去巡逻|结束巡逻
+//message ToActionReq{
+//    string clientId = 1;
+//    string toClientId=2;
+//    string mainAction = 3;
+//    string locations = 4;
+//    string action = 5;
+//    string flag = 6;
+//}
+//
+//
+//// //获取当前任务
+//message GetIndexInfoReq{
+//  string clientId = 1;
+//  string toClientId = 2;
+//  string action = 3;
+//}
+
+//上报机器人数据
+message UploadReq{
+    string clientId = 1;
+    string toClientId = 2;
+    string action = 3;
+    string location = 4;
+    int64 chargeState= 5;
+    int64 batteryLevel = 6;
+    int64 currentTask = 7;
+    int64 deviceId = 8;
+}
+
+//上报机器人位置
+message UploadLocationReq{
+    string clientId = 1;
+    string toClientId = 2;
+    string action = 3;
+    string word = 4;
+}
