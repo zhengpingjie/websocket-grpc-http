@@ -178,9 +178,6 @@ func(this  *SessionM)Start(){
 			case conn := <- this.Unregister:
 				//断开连接
 				this.UnregisterEvent(conn)
-			default:
-
-
 		}
 	}
 }
