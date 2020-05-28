@@ -93,7 +93,6 @@ func (this *Session) Write() {
 			}
 			fmt.Println("通过管道接写数据",message)
 			this.Conn.WriteJSON(message)
-		default:
 
 		}
 	}
