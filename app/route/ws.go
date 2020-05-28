@@ -29,8 +29,6 @@ func Task(){
 				wsrobot.TimerClean()
 				//间隔30秒执行
 				t.Reset(20*time.Second)
-			default:
-
 			}
 		}
 
