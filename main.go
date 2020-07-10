@@ -8,9 +8,9 @@ import (
 	"robot/app/route"
 )
 func main(){
-//	engine := gin.Default()
+	engine := gin.Default()
 	// 设置路由
-	//runtime.GOMAXPROCS(runtime.NumCPU())
+   runtime.GOMAXPROCS(runtime.NumCPU())
 	  //http路由
 	//route.HttpRouter(engine)
 	  //注册websocket路由
